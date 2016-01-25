@@ -15,6 +15,8 @@ public class Track
     private String filename;
     //Cuenta las reproducciones de una cancion
     private int playCount;
+    // Año de la cancion
+    private int anio;
     
     /**
      * Constructor for objects of class Track.
@@ -22,9 +24,9 @@ public class Track
      * @param title The track's title.
      * @param filename The track file. 
      */
-    public Track(String artist, String title, String filename)
+    public Track(String artist, String title, String filename,int anio)
     {
-        setDetails(artist, title, filename);
+        setDetails(artist, title, filename,anio);
         playCount =0;
     }
     
@@ -53,20 +55,27 @@ public class Track
     
     public Track(String filename)
     {
-        setDetails("unknown", "unknown", filename);
+        setDetails("unknown", "unknown", filename , 0);
     }
     
     /**
      * Return the artist.
      * @return The artist.
      */
+    
     public String getArtist()
     {
         return artist;
     }
-    
     /**
-     * Return the title.
+     * Mtodo que devuelve el año
+     */
+    
+    public int getAnio()
+    {
+        return anio;
+    }
+     /** Return the title.
      * @return The title.
      */
     public String getTitle()
@@ -89,7 +98,7 @@ public class Track
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + " Reproducciones: " + playCount + ")";
+        return artist + ": " + title + "  (file: " + filename + " Reproducciones: " + playCount + "Año: " + anio + ")";
     }
     
     /**
@@ -98,11 +107,12 @@ public class Track
      * @param title The track's title.
      * @param filename The track file. 
      */
-    private void setDetails(String artist, String title, String filename)
+    private void setDetails(String artist, String title, String filename , int anio)
     {
         this.artist = artist;
         this.title = title;
         this.filename = filename;
+        this.anio = anio;
     }
     
 }
