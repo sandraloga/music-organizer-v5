@@ -198,6 +198,19 @@ public class MusicOrganizer
           System.out.println(tracks);
       }
     }
+    public void removeByArtist(String artista)
+    {
+       Iterator<Track> it = tracks.iterator();
+       while (it.hasNext())
+       {
+           Track tracks = it.next(); 
+           if (tracks.getArtist().contains(artista)) 
+            {
+                it.remove();
+            }
+             
+       }
+    }
     
     
 }
