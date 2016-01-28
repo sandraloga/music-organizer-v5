@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * A class to hold details of audio tracks.
@@ -15,6 +16,7 @@ public class MusicOrganizer
     private MusicPlayer player;
     // A reader that can read music files and load them as tracks.
     private TrackReader reader;
+    
 
     /**
      * Create a MusicOrganizer
@@ -186,6 +188,15 @@ public class MusicOrganizer
            }
        }
             
+    }
+    public void listAllTrackWithIterator()
+    {
+      Iterator<Track>it=tracks.iterator();
+      while (it.hasNext())
+      {
+          Track tracks = it.next();
+          System.out.println(tracks);
+      }
     }
     
     
