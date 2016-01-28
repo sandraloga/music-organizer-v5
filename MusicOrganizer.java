@@ -187,7 +187,9 @@ public class MusicOrganizer
                 System.out.println(track.getDetails());
            }
        }
-            
+      /**
+       * metodo que muestra los detalles de todos los tracks almacenados en un organizador usando un iterador.
+       */      
     }
     public void listAllTrackWithIterator()
     {
@@ -198,6 +200,9 @@ public class MusicOrganizer
           System.out.println(tracks);
       }
     }
+    /**
+     * metodo que permite eliminar del organizador los tracks que contengan un determinado artista usando un iterador.
+     */
     public void removeByArtist(String artista)
     {
        Iterator<Track> it = tracks.iterator();
@@ -211,6 +216,21 @@ public class MusicOrganizer
              
        }
     }
+    /**
+     * Metodo que permite eliminar del organizador los tracks que contengan una determinada cadena en el título de la canción usando un iterador
+     */
     
-    
+    public void removeByTitle (String titulo)
+    {
+     Iterator<Track> it = tracks.iterator();
+       while (it.hasNext())
+       {
+           Track tracks = it.next(); 
+           if (tracks.getTitle().contains(titulo)) 
+            {
+                it.remove();
+            }
+             
+       }
+    }
 }
